@@ -75,6 +75,8 @@ function Root() {
 
   useEffect(() => {
     async function fetchToken() {
+      await SplashScreen.preventAutoHideAsync();
+      
       const storedToken = await AsyncStorage.getItem('token');
 
       if (storedToken) {
@@ -82,13 +84,15 @@ function Root() {
       }
 
       setIsTryingLogin(false);
+      
+      await SplashScreen.hideAsync();
     }
 
     fetchToken();
   }, []);
 
   if (isTryingLogin) {
-    return <SplashScreen />;
+    return null;
   }
 
   return <Navigation />;
