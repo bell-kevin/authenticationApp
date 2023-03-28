@@ -5,7 +5,6 @@ import { StatusBar } from 'expo-status-bar';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as SplashScreen from 'expo-splash-screen';
 
-import SuccessScreen from './screens/SuccessScreen';
 import LoginScreen from './screens/LoginScreen';
 import SignupScreen from './screens/SignupScreen';
 import WelcomeScreen from './screens/WelcomeScreen';
@@ -54,7 +53,6 @@ function AuthenticatedStack() {
           ),
         }}
       />
-      <Stack.Screen name="Success" component={SuccessScreen} />
     </Stack.Navigator>
   );
 }
